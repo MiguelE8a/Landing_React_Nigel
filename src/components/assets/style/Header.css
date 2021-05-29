@@ -1,0 +1,12 @@
+.header{
+  width: 100vw;
+  height: 5.5rem;
+  border: 1px solid #000;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.icon-Img{
+  fill: black;
+}
