@@ -2,11 +2,18 @@
   width: 100vw;
   height: 5.5rem;
   border: 1px solid #000;
-  font-size: 1.6rem;
+  font-size: 3.6rem;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  color: antiquewhite;
 }
-.icon-Img{
-  fill: black;
+.icon{
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: 0 0.6rem;
+}
+
+.margin__right{
+  margin-right: 2rem;
 }

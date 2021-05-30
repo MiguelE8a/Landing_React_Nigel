@@ -1,0 +1,116 @@
+$borderSolid: 1px solid #000;
+$colorControls:#22252b;
+$whiteColor: #fff;
+$blackLigth: rgba(0, 0, 0, 0.329);
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@mixin tracks {
+  color: #22252b;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 3rem;
+  text-align: left;
+}
+
+.metadataContainer{
+  width: 35rem;
+  height: 55.2rem;
+  border: $borderSolid;
+  text-align: start;
+  margin-right: 3rem;
+  
+    .metadata__img{
+      width: 320px;
+      height: 320px;
+      border: 0.3rem solid $whiteColor;
+      box-sizing: border-box;
+    }
+    .audio-streaming-container{
+      background-color: $whiteColor;
+      position: obsolute;
+      
+      .stream--dark{
+        width: 32rem;
+        height: 11.1rem;
+        position: absolute;
+        background-color: $whiteColor;
+
+        .track_List{
+          cursor: pointer;
+          position: relative;
+          bottom: 2.5rem;
+          left: 1.6rem;
+          width: 28rem;
+          height: 3.1rem;
+          border-bottom: 0.1rem solid $blackLigth;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .track__Name, .track__Time{
+            @include tracks();
+            letter-spacing: 0.1rem;
+          }
+          .right-5rem{
+            position: relative;
+            right: 4rem;
+          }
+        }
+        .tracklist__footer{
+          color: rgba(0, 0, 0, 0.45);
+          font-size: 10px;
+          font-weight: bold;
+          width: 100%;
+          position: relative;
+          bottom: 1.5rem;
+          left: 5rem;
+        }
+        
+        .stream__controls--container{
+         @include flexCenter();
+         flex-direction: column;
+        //  border: $borderSolid;
+         background-color: $whiteColor;   
+
+            .current-track{
+              width: 100%;
+              height: 0.5rem;
+              background-color: red;
+            }
+            .stream__control-bg{
+              @include flexCenter();
+              background-color:rgba(55, 61, 71, 0.6);
+              border-radius: 50%;
+              width: 6.2rem;
+              height: 6.2rem;
+              position:relative;
+              bottom: 3rem;
+              
+              .stream__controls{
+                @include flexCenter();
+                background-color: $whiteColor;
+                width: 5.4rem;
+                height: 5.4rem;
+                border-radius: 50%;
+                box-shadow: 0.3rem 0.3rem 0.5rem $blackLigth;
+                // border: 0.4rem solid rgba(55, 61, 71, 0.6);;
+                font-size: 2rem;
+                color: $colorControls;
+              }
+            }
+            .stream__controls:hover{
+              color:#fe4b2e;
+            
+            }
+        }
+      }
+      
+    }
+}
+

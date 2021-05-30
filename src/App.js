@@ -2,7 +2,7 @@ import './App.css';
 import Landing from './pages/Landing.jsx'
 import Header from './components/Header.jsx'
 import Title from './components/Title.jsx'
-import Mainn from './components/mainn/Mainn.jsx'
+import Main from './components/mainn/Main.jsx'
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Landing>
         <Header/>
         <Title />
-        <Mainn />
+        <Main />
       </Landing>
     </div>
   );

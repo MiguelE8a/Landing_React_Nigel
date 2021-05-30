@@ -2,9 +2,9 @@ import React from 'react'
 import './style/Main.css'
 import Metada from './Metadata.jsx'
 
-const Mainn = () =>(
-  <div className="mainn">
+const Main = () =>(
+  <div className="main">
     <Metada />
   </div>
 )
-export default Mainn
+export default Main
