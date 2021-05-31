@@ -1,9 +1,9 @@
 import React from 'react'
 import './assets/style/Title.css'
 
-const Title = () =>(
+const Title = (props) =>(
   <div className="title">
-    <p className="title__Name">Nigel - Paradise</p>
+    <p className="title__Name">{props.name} - {props.trackName}</p>
     <div className="title__LineDow"></div>
   </div>
 )

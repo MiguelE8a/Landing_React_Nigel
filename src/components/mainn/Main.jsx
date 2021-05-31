@@ -1,10 +1,18 @@
 import React from 'react'
 import './style/Main.css'
 import Metada from './Metadata.jsx'
+import Retailer from './Retailer.jsx'
 
 const Main = () =>(
   <div className="main">
-    <Metada />
+    <div className="contain-metadata">
+      <Metada 
+        titleTrack="Paradise"
+      />
+    </div>
+    <div className="container-Retailer">
+      <Retailer />
+    </div>
   </div>
 )
-export default Main
+export default Main 
