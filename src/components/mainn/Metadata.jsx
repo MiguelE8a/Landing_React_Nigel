@@ -5,9 +5,48 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faPause } from '@fortawesome/free-solid-svg-icons'
 import image from '../assets/static/paradise_portada.jpg'
 import Cancion from '../assets/static/Andhim-BoyBoyBoy(MKRemix).mp3'
+import { useState, useRef, useEffect } from 'react'
 
+function useInterval(callback, delay){
+  const savedCallback = useRef();
+  console.log(callback)
+
+  useEffect(()=> {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  useEffect(()=> {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null){
+      let id = setInterval(tick, delay);
+      return () =>clearInterval(id)
+    }
+  }, [delay]);
+}
 
 const Metadata = (props) =>{
+  const [playing, setPlaying] = useState(0)
+  const [progress, setProgress] = useState(0)
+  const audioRef = useRef(null)
+  const [timeProgress, setTimeProgress] = useState()
+  const togglePlaying = () => setPlaying(prev => !prev)
+
+  useEffect(()=>{
+    if(audioRef && audioRef.current){
+      if(playing) audioRef.current.play();
+      else audioRef.current.pause();
+    }
+  },[playing])
+  
+  useInterval(()=> {
+    if(audioRef && audioRef.current){
+      const {currentTime, duration} = audioRef.current
+      setProgress(Math.ceil((currentTime * 100) / duration))
+    }
+  })
+
 
   return(
     <div className="metadataContainer">
@@ -15,21 +54,20 @@ const Metadata = (props) =>{
       <div className="audio-streaming-container">
         <div className="stream--dark">
           <div className="stream__controls--container">
-          
-            <div className="current-track"></div>
+            <div className="current-track-container">
+              <div className="currentTrack01"></div>
+              <div className="currentTrack02" style={{width:`${progress}%`,}}></div>
+            </div>
             <div className="stream__control-bg">
-              <audio controls id="audio" className="player-audio">
-                <source src={Cancion} type="audio/mpeg"/>
-              </audio>
-              <a href="/#" className="stream__controls">
-                <FontAwesomeIcon icon={faPlay} />              
-                <FontAwesomeIcon icon={faPause} />              
-              </a>
+              <audio src={Cancion} ref={audioRef} type="audio/mpeg" id="audio" className="player-audio"></audio>
+              <div onClick={togglePlaying} className="stream__controls">
+                {playing ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
+              </div>
             </div>
           </div>
           <div className="track_List">
             <div className="track__Name">{props.titleTrack}</div>
-            <div className="track__Time right-5rem">0:00</div>
+            <div className="track__Time right-5rem">{timeProgress}</div>
           </div>
           <div className="tracklist__footer">Audio samples provided courtesy of iTunes</div>   
         </div>

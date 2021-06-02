@@ -1,5 +1,5 @@
 import React from 'react'
-import './style/Main.css'
+import './style/Main.scss'
 import Metada from './Metadata.jsx'
 import Retailer from './Retailer.jsx'
 

@@ -1,10 +1,8 @@
 import React from 'react'
-import './assets/style/Header.css'
+import './assets/style/Header.scss'
 import Ig from '../components/assets/static/Ig.jsx'
 import Facebook from '../components/assets/static/Facebook.jsx'
 import Twitter from '../components/assets/static/Twitter.jsx'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () =>(
   <div className="header">
@@ -14,7 +12,7 @@ const Header = () =>(
     <a href="https://twitter.com/deejaynigel" className="icon" target="_blank">
       <Twitter /> 
     </a>
-    <a href="https://www.instagram.com/deejaynigel/?hl=es-la" className="icon margin__right" target="_blank">
+    <a href="https://www.instagram.com/deejaynigel/?hl=es-la" className="icon margin__right" target="_blank" rel="noopener">
       <Ig />
     </a>
   </div>

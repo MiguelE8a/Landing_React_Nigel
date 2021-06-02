@@ -1,5 +1,5 @@
 import React from 'react'
-import './style/Landing.css'
+import './style/Landing.scss'
 
 const Landing = ({children})=>(
   <div className="landing">
