@@ -6,7 +6,7 @@ import Deezerlogo from './static/deezerlogo.png'
 import ApleMusiclogo from './static/applemusiclogo.png'
 import YoutubeLogo from './static/youtubelogo.png'
 import SoundCloudLogo from './static/soundcloud.png'
-import OficialStore from './static/oficialStoreLogo.png'
+import OficialStore from './static/download.png'
 
 
 const Retailer = () =>(

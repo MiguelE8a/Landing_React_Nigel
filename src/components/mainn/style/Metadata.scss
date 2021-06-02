@@ -121,15 +121,17 @@ $blackLigth: rgba(0, 0, 0, 0.329);
               
               .currentTrack01{
                 width: 100%;
-                height: 0.5rem;
+                height: 0.7rem;
                 background-color: rgb(255, 255, 255);
                 position: relative;
+                border-bottom: 2px solid black;
               }
               .currentTrack02{
                 position: relative;     
-                height: 0.5rem;
-                top: -0.5rem;
+                height: 0.7rem;
+                top: -0.7rem;
                 background-color: #ff0000;
+                border-bottom: 2px solid black;
               }
             }
             .stream__control-bg{
