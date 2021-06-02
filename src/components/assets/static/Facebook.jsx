@@ -9,8 +9,7 @@ const Facebook = () =>(
       height="0.444449in" 
       version="1.1" 
       viewBox="0 0 111.7 111.7"
-      xmlnXlink="http://www.w3.org/1999/xlink"
-      xmlnsXodm="http://www.corel.com/coreldraw/odm/2003"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       className="facebook">
     <g id="Capa_x0020_1">
       <metadata id="CorelCorpID_0Corel-Layer"/>

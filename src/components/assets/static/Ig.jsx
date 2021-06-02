@@ -11,7 +11,6 @@ const Ig = () =>(
       version="1.1" 
       viewBox="0 0 174.98 174.98"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      xmlnsXodm="http://www.corel.com/coreldraw/odm/2003"
       className="ig"
       >
       <defs>

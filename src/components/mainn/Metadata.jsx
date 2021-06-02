@@ -3,13 +3,12 @@ import './style/Metadata.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faPause } from '@fortawesome/free-solid-svg-icons'
-import image from '../assets/static/paradise_portada.jpg'
-import Cancion from '../assets/static/Andhim-BoyBoyBoy(MKRemix).mp3'
+import imagen from '../assets/static/paradise_portada.jpg'
+import Cancion from '../assets/static/Paradise(Preview).mp3'
 import { useState, useRef, useEffect } from 'react'
 
 function useInterval(callback, delay){
   const savedCallback = useRef();
-  console.log(callback)
 
   useEffect(()=> {
     savedCallback.current = callback;
@@ -30,7 +29,6 @@ const Metadata = (props) =>{
   const [playing, setPlaying] = useState(0)
   const [progress, setProgress] = useState(0)
   const audioRef = useRef(null)
-  const [timeProgress, setTimeProgress] = useState()
   const togglePlaying = () => setPlaying(prev => !prev)
 
   useEffect(()=>{
@@ -50,7 +48,7 @@ const Metadata = (props) =>{
 
   return(
     <div className="metadataContainer">
-      <img src={image}  className="metadata__img" alt="Album Picture "/>
+      <img src={imagen}  className="metadata__img" alt="AlbumPicture"/>
       <div className="audio-streaming-container">
         <div className="stream--dark">
           <div className="stream__controls--container">
@@ -67,7 +65,7 @@ const Metadata = (props) =>{
           </div>
           <div className="track_List">
             <div className="track__Name">{props.titleTrack}</div>
-            <div className="track__Time right-5rem">{timeProgress}</div>
+            <div className="track__Time right-5rem">{"0:00"}</div>
           </div>
           <div className="tracklist__footer">Audio samples provided courtesy of iTunes</div>   
         </div>
